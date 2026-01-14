@@ -58,4 +58,37 @@
     }
 
     button {
-      margin-l
+      margin-left: 10px;
+      padding: 12px 18px;
+      border: none;
+      border-radius: 6px;
+      background: #5865f2;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #4752c4;
+    }
+  </style>
+</head>
+
+<body>
+  <header>💬 شات خاص</header>
+
+  <ul id="messages"></ul>
+
+  <form id="form" class="input-area">
+    <input
+      id="message"
+      autocomplete="off"
+      placeholder="اكتب رسالتك واضغط Enter"
+    />
+    <button type="submit">إرسال</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
