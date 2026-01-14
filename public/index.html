@@ -1,48 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Chat</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="app">
+    <div class="sidebar">
+      <h2>Rooms</h2>
+      <div class="room active"># general</div>
+    </div>
 
-<div id="login">
-  <input id="username" placeholder="Your name">
-  <button onclick="join()">Join</button>
-</div>
+    <div class="chat">
+      <div id="messages" class="messages"></div>
 
-<div id="chat" style="display:none;">
-  <ul id="messages"></ul>
-  <input id="input" placeholder="Message">
-  <button onclick="send()">Send</button>
-</div>
+      <div class="input-box">
+        <input id="input" placeholder="Type a message..." autocomplete="off" />
+      </div>
+    </div>
+  </div>
 
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  const socket = io();
-  let user = "";
-
-  function join() {
-    user = username.value;
-    if (!user) return;
-    login.style.display = "none";
-    chat.style.display = "block";
-  }
-
-  function send() {
-    if (input.value) {
-      socket.emit("chat message", user + ": " + input.value);
-      input.value = "";
-    }
-  }
-
-  socket.on("chat message", (msg) => {
-    const li = document.createElement("li");
-    li.textContent = msg;
-    messages.appendChild(li);
-  });
-</script>
-
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
