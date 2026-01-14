@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="login">
+  <input id="username" placeholder="Your name">
+  <button onclick="join()">Join</button>
+</div>
+
+<div id="chat" style="display:none;">
+  <ul id="messages"></ul>
+  <input id="input" placeholder="Message">
+  <button onclick="send()">Send</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  let user = "";
+
+  function join() {
+    user = username.value;
+    if (!user) return;
+    login.style.display = "none";
+    chat.style.display = "block";
+  }
+
+  function send() {
+    if (input.value) {
+      socket.emit("chat message", user + ": " + input.value);
+      input.value = "";
+    }
+  }
+
+  socket.on("chat message", (msg) => {
+    const li = document.createElement("li");
+    li.textContent = msg;
+    messages.appendChild(li);
+  });
+</script>
+
+</body>
+</html>
