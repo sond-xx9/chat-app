@@ -1,0 +1,23 @@
+body {
+  background: #1e1e1e;
+  color: white;
+  font-family: Arial;
+}
+
+#login, #chat {
+  width: 300px;
+  margin: 50px auto;
+}
+
+input {
+  width: 70%;
+}
+
+button {
+  width: 25%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
