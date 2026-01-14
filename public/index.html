@@ -3,25 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>Chat</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
-  <div class="app">
-    <div class="sidebar">
-      <h2>Rooms</h2>
-      <div class="room active"># general</div>
-    </div>
 
-    <div class="chat">
-      <div id="messages" class="messages"></div>
+  <div id="messages"></div>
 
-      <div class="input-box">
-        <input id="input" placeholder="Type a message..." autocomplete="off" />
-      </div>
-    </div>
-  </div>
+  <input
+    id="input"
+    type="text"
+    placeholder="Type a message and press Enter"
+    autocomplete="off"
+  />
 
+  <!-- Socket.io -->
   <script src="/socket.io/socket.io.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
+
+  <!-- Your scrip
