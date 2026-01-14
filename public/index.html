@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <title>Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<title>Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{margin:0;background:#1e1f22;color:#fff;font-family:Arial;height:100vh;display:flex;flex-direction:column}
+header{padding:12px;text-align:center;background:#111214;border-bottom:1px solid #2b2d31}
+ul{flex:1;list-style:none;margin:0;padding:15px;overflow-y:auto}
+li{background:#2b2d31;padding:8px 12px;border-radius:6px;margin-bottom:8px;max-width:70%}
+form{display:flex;padding:10px;background:#111214;border-top:1px solid #2b2d31}
+input{flex:1;padding:12px;border:none;border-radius:6px;outline:none}
+button{margin-left:10px;padding:12px 18px;border:none;border-radius:6px;background:#5865f2;color:#fff}
+</style>
 </head>
 <body>
-
-  <div id="messages"></div>
-
-  <input
-    id="input"
-    type="text"
-    placeholder="Type a message and press Enter"
-    autocomplete="off"
-  />
-
-  <!-- Socket.io -->
-  <script src="/socket.io/socket.io.js"></script>
-
-  <!-- Your scrip
+<header>💬 شات</header>
+<ul id="messages"></ul>
+<form id="form">
+<input id="message" autocomplete="off" placeholder="اكتب واضغط Enter">
+<button type="submit">إرسال</button>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
